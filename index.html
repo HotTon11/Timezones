@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Clock App</title>
+  </head>
+
+  <body onload="returnTime();">
+    <div class="container">
+      <div>
+        <h1>TIMEZONES</h1>
+        <p class="about">
+          Timezone calculations within the built-in Javascript framework.
+          Returns local time of the 3 places I've lived + GMT.
+        </p>
+      </div>
+
+      <div>
+        <div class="city-container">
+          <h3 class="city">Greenwich <span class="zone">(GMT)</span></h3>
+          <span class="time-style" id="greenwich"></span>
+        </div>
+
+        <div class="city-container">
+          <h3 class="city">New York <span class="zone">(EST)</span></h3>
+          <span class="time-style" id="newyork"></span>
+        </div>
+
+        <div class="city-container">
+          <h3 class="city">Dallas <span class="zone">(CST)</span></h3>
+          <span class="time-style" id="dallas"></span>
+        </div>
+
+        <div class="city-container">
+          <h3 class="city">Singapore <span class="zone">(SNST)</span></h3>
+          <span class="time-style" id="singapore"></span>
+        </div>
+      </div>
+
+      <div class="readme">
+        There was more to this that I thought. Here's a couple important
+        takeaways:
+        <ol class="ordered-list">
+          <li>
+            My first time creating a "timer" using <code>setTimeout()</code>. In
+            this case the timer function (set to 1000ms, or 1 sec) goes inside
+            the main function <code>returnTime()</code>, which is called
+            "on-load" in the body element.
+          </li>
+          <li>
+            Javascript has built-in time calculations, but render different
+            values depending on which method you are using. For example,
+            <code>getTimezoneOffset()</code> returns minutes whereas
+            <code>getTime()</code> returns milliseconds.
+          </li>
+          <li>UTC</li>
+        </ol>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
